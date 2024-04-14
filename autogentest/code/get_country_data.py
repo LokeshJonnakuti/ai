@@ -4,7 +4,7 @@ import requests
 import pandas as pd
 
 # Send a GET request to the REST Countries API
-response = requests.get("https://restcountries.com/v2/all")
+response = requests.get("https://restcountries.com/v2/all", timeout=60)
 
 # The response is a list of dictionaries
 data = response.json()

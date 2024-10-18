@@ -16,7 +16,7 @@ def scrape_news():
 
     # Retrieve news articles from https://www.ainews.co/
     ainews_url = "https://www.ainews.co/"
-    ainews_response = requests.get(ainews_url)
+    ainews_response = requests.get(ainews_url, timeout=60)
     ainews_soup = BeautifulSoup(ainews_response.text, 'html.parser')
     ainews_headlines = ainews_soup.find_all('h2', class_='entry-title')
 
@@ -25,7 +25,7 @@ def scrape_news():
 
     # Retrieve news articles from https://www.aitrends.com/
     aitrends_url = "https://www.theguardian.com/technology/artificialintelligenceai"
-    aitrends_response = requests.get(aitrends_url)
+    aitrends_response = requests.get(aitrends_url, timeout=60)
     aitrends_soup = BeautifulSoup(aitrends_response.text, 'html.parser')
     aitrends_headlines = aitrends_soup.find_all('h2', class_='entry-title')
 
